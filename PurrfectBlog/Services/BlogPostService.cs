@@ -1,6 +1,7 @@
 ﻿using PurrfectBlog.DataAccess;
 using PurrfectBlog.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PurrfectBlog.Services
 {
@@ -36,7 +37,9 @@ namespace PurrfectBlog.Services
 
 		public IEnumerable<BlogPost> GetAll()
 		{
-			return _context.BlogPosts;
+			return _context.BlogPosts
+				.OrderByDescending(post => post.CreatedAt)
+				.ToList();
 		}
 	}
 }

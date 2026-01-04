@@ -34,7 +34,13 @@ namespace PurrfectBlog.Controllers
 			}
 
 			_blogPostService.Create(post);
-			return RedirectToAction("Index");
+			return RedirectToAction("Posts");
+		}
+
+		public ActionResult Posts()
+		{
+			var posts = _blogPostService.GetAll();
+			return View("Posts", posts);
 		}
 	}
 }

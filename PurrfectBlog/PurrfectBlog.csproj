@@ -225,6 +225,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\BlogPosts\Index.cshtml" />
     <Content Include="Views\BlogPosts\CreatePost.cshtml" />
+    <Content Include="Views\BlogPosts\Posts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
