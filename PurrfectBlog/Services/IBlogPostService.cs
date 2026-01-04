@@ -9,7 +9,7 @@ namespace PurrfectBlog.Services
 
 		IEnumerable<BlogPost> GetAll();
 
-		BlogPost Get(int id);
+		BlogPost GetById(int id);
 
 		void Edit (BlogPost post);
 

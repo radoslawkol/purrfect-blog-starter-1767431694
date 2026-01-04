@@ -42,5 +42,15 @@ namespace PurrfectBlog.Controllers
 			var posts = _blogPostService.GetAll();
 			return View("Posts", posts);
 		}
+
+		public ActionResult Details(int id)
+		{
+			var post = _blogPostService.GetById(id);
+			if (post == null)
+			{
+				return HttpNotFound();
+			}
+			return View("Details", post);
+		}
 	}
 }

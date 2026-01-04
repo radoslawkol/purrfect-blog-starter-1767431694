@@ -226,6 +226,7 @@
     <Content Include="Views\BlogPosts\Index.cshtml" />
     <Content Include="Views\BlogPosts\CreatePost.cshtml" />
     <Content Include="Views\BlogPosts\Posts.cshtml" />
+    <Content Include="Views\BlogPosts\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

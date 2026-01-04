@@ -30,9 +30,9 @@ namespace PurrfectBlog.Services
 			throw new System.NotImplementedException();
 		}
 
-		public BlogPost Get(int id)
+		public BlogPost GetById(int id)
 		{
-			throw new System.NotImplementedException();
+			return _context.BlogPosts.Find(id);
 		}
 
 		public IEnumerable<BlogPost> GetAll()

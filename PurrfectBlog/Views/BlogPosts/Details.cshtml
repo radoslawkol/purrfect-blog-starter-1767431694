@@ -1,0 +1,23 @@
+﻿@model PurrfectBlog.Models.BlogPost
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<article class="mt-5">
+    <h1 class="mb-4">@Model.Title</h1>
+
+    <small>
+        @Model.CreatedAt.ToLocalTime().ToString("MMM dd, yyyy")
+        @if (!string.IsNullOrEmpty(Model.Category))
+        {
+            <span> | @Model.Category</span>
+        }
+    </small>
+
+    <p class="my-4">@Model.Content</p>
+</article>
+<p>
+    @Html.ActionLink("Back to List", "Posts", null, new { @class = "btn btn-outline-primary btn-md" })
+</p>
