@@ -7,6 +7,7 @@ namespace PurrfectBlog.Controllers
 	public class BlogPostsController : Controller
 	{
 		private readonly IBlogPostService _blogPostService;
+		private const int HomePageRecentPostCount = 3;
 
 		public BlogPostsController(IBlogPostService blogPostService)
 		{
@@ -15,14 +16,14 @@ namespace PurrfectBlog.Controllers
 
 		public ActionResult Index()
 		{
-			return View();
+			var latestPosts = _blogPostService.GetLatest(HomePageRecentPostCount);
+			return View(latestPosts);
 		}
 
 		public ActionResult CreatePost()
 		{
 			return View("CreatePost");
 		}
-
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -34,7 +35,23 @@ namespace PurrfectBlog.Controllers
 			}
 
 			_blogPostService.Create(post);
-			return RedirectToAction("Index");
+			return RedirectToAction("Posts");
+		}
+
+		public ActionResult Posts()
+		{
+			var posts = _blogPostService.GetAll();
+			return View("Posts", posts);
+		}
+
+		public ActionResult Details(int id)
+		{
+			var post = _blogPostService.GetById(id);
+			if (post == null)
+			{
+				return HttpNotFound();
+			}
+			return View("Details", post);
 		}
 	}
 }

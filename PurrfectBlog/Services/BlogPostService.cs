@@ -1,6 +1,7 @@
 ﻿using PurrfectBlog.DataAccess;
 using PurrfectBlog.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PurrfectBlog.Services
 {
@@ -29,14 +30,24 @@ namespace PurrfectBlog.Services
 			throw new System.NotImplementedException();
 		}
 
-		public BlogPost Get(int id)
+		public BlogPost GetById(int id)
 		{
-			throw new System.NotImplementedException();
+			return _context.BlogPosts.Find(id);
 		}
 
 		public IEnumerable<BlogPost> GetAll()
 		{
-			return _context.BlogPosts;
+			return _context.BlogPosts
+				.OrderByDescending(post => post.CreatedAt)
+				.ToList();
+		}
+
+		public IEnumerable<BlogPost> GetLatest(int count)
+		{
+			return _context.BlogPosts
+				.OrderByDescending(post => post.CreatedAt)
+				.Take(count)
+				.ToList();
 		}
 	}
 }
