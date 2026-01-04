@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-5">
+    <h1>😿 Something went wrong!</h1>
+    <p class="lead">
+        An unexpected error occurred while processing your request.
+    </p>
+
+    <p>
+        Please try again later or contact the administrator if the problem persists.
+    </p>
+
+    <div class="mt-4">
+        @Html.ActionLink(
+            "Go to Home Page",
+            "Index",
+            "BlogPosts",
+            null,
+            new { @class = "btn btn-primary btn-lg" }
+        )
+    </div>
+</div>
+
+

@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Post Not Found";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-5">
+    <h1>😿 Page Not Found | 404</h1>
+
+    <p class="lead">
+        The page you’re looking for doesn’t exist or may have been removed.
+    </p>
+
+    <div class="mt-4">
+        @Html.ActionLink(
+            "Back to Posts",
+            "Posts",
+            "BlogPosts",
+            null,
+            new { @class = "btn btn-primary btn-lg" }
+        )
+
+        @Html.ActionLink(
+            "Go Home",
+            "Index",
+            "BlogPosts",
+            null,
+            new { @class = "btn btn-outline-secondary btn-lg ms-2" }
+        )
+    </div>
+</div>
