@@ -7,6 +7,7 @@ namespace PurrfectBlog.Controllers
 	public class BlogPostsController : Controller
 	{
 		private readonly IBlogPostService _blogPostService;
+		private const int HomePageRecentPostCount = 3;
 
 		public BlogPostsController(IBlogPostService blogPostService)
 		{
@@ -15,14 +16,14 @@ namespace PurrfectBlog.Controllers
 
 		public ActionResult Index()
 		{
-			return View();
+			var latestPosts = _blogPostService.GetLatest(HomePageRecentPostCount);
+			return View(latestPosts);
 		}
 
 		public ActionResult CreatePost()
 		{
 			return View("CreatePost");
 		}
-
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]

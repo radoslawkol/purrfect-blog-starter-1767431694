@@ -41,5 +41,13 @@ namespace PurrfectBlog.Services
 				.OrderByDescending(post => post.CreatedAt)
 				.ToList();
 		}
+
+		public IEnumerable<BlogPost> GetLatest(int count)
+		{
+			return _context.BlogPosts
+				.OrderByDescending(post => post.CreatedAt)
+				.Take(count)
+				.ToList();
+		}
 	}
 }

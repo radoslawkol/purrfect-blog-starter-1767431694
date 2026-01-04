@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<PurrfectBlog.Models.BlogPost>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -7,5 +9,28 @@
         <h1 id="title">Welcome to Purrfect Blog</h1>
         <p class="lead">This blog is about cats.</p>
         @Html.ActionLink("See more", "Posts", "BlogPosts", null, new { @class = "btn btn-primary btn-md" })
+    </section>
+    <hr />
+    <section>
+        <h2 class="mb-4">Recent posts</h2>
+        @foreach (var post in Model)
+        {
+            <article>
+                <h3>@post.Title</h3>
+
+                <small>
+                    @post.CreatedAt.ToLocalTime().ToString("MMM dd, yyyy")
+                </small>
+
+                <p>
+                    @(post.Content.Length > 120
+                ? post.Content.Substring(0, 120) + "..."
+                : post.Content)
+                </p>
+
+                @Html.ActionLink("Read More", "Details", "BlogPosts", new { id = post.Id }, null)
+            </article>
+            <hr />
+        }
     </section>
 </main>

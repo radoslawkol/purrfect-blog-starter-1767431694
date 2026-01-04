@@ -14,5 +14,7 @@ namespace PurrfectBlog.Services
 		void Edit (BlogPost post);
 
 		void Delete(int id);
+
+		IEnumerable<BlogPost> GetLatest(int count);
 	}
 }
