@@ -20,9 +20,18 @@ namespace PurrfectBlog.Services
 			_context.SaveChanges();
 		}
 
-		public void Delete(int id)
+		public bool Delete(int id)
 		{
-			throw new System.NotImplementedException();
+			var post = _context.BlogPosts.Find(id);
+
+			if (post is null)
+			{
+				return false;
+			}
+
+			_context.BlogPosts.Remove(post);
+			_context.SaveChanges();
+			return true;
 		}
 
 		public void Update(BlogPost post)

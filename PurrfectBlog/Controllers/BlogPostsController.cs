@@ -81,5 +81,21 @@ namespace PurrfectBlog.Controllers
 			_blogPostService.Update(post);
 			return RedirectToAction("Details", new {id = post.Id});
 		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult DeletePost(int id)
+		{
+			var deleted = _blogPostService.Delete(id);
+
+			if (!deleted)
+			{
+				return HttpNotFound();
+			}
+
+			TempData["SuccessMessage"] = "Blog post deleted successfully.";
+
+			return RedirectToAction("Posts");
+		}
 	}
 }

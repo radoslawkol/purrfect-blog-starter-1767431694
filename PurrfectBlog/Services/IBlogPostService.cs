@@ -13,7 +13,7 @@ namespace PurrfectBlog.Services
 
 		void Update (BlogPost post);
 
-		void Delete(int id);
+		bool Delete(int id);
 
 		IEnumerable<BlogPost> GetLatest(int count);
 	}
