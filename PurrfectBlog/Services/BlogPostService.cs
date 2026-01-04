@@ -25,9 +25,19 @@ namespace PurrfectBlog.Services
 			throw new System.NotImplementedException();
 		}
 
-		public void Edit(BlogPost post)
+		public void Update(BlogPost post)
 		{
-			throw new System.NotImplementedException();
+			var existingPost = _context.BlogPosts.Find(post.Id);
+			if (existingPost is null)
+			{
+				return;
+			}
+
+			existingPost.Title = post.Title;
+			existingPost.Content = post.Content;
+			existingPost.Category = post.Category;
+
+			_context.SaveChanges();
 		}
 
 		public BlogPost GetById(int id)

@@ -11,7 +11,7 @@ namespace PurrfectBlog.Services
 
 		BlogPost GetById(int id);
 
-		void Edit (BlogPost post);
+		void Update (BlogPost post);
 
 		void Delete(int id);
 

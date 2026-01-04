@@ -23,6 +23,14 @@
             </div>
         </div>
     </nav>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+            @TempData["SuccessMessage"]
+
+            <button class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -34,5 +42,14 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        setTimeout(function () {
+            var alert = document.getElementById('alert');
+            if (alert) {
+                var bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+                bsAlert.close();
+            }
+        }, 5000);
+    </script>
 </body>
 </html>

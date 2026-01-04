@@ -19,5 +19,6 @@
     <p class="my-4">@Model.Content</p>
 </article>
 <p>
-    @Html.ActionLink("Back to List", "Posts", null, new { @class = "btn btn-outline-primary btn-md" })
+    @Html.ActionLink("Back to List", "Posts", "BlogPosts", null, new { @class = "btn btn-outline-primary btn-md" })
+    @Html.ActionLink("Edit", "EditPost", "BlogPosts", new { id = Model.Id }, new { @class = "btn btn-primary btn-md" })
 </p>

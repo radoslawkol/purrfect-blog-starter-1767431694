@@ -47,11 +47,39 @@ namespace PurrfectBlog.Controllers
 		public ActionResult Details(int id)
 		{
 			var post = _blogPostService.GetById(id);
-			if (post == null)
+			if (post is null)
 			{
 				return HttpNotFound();
 			}
 			return View("Details", post);
+		}
+
+		[HttpGet]
+		public ActionResult EditPost(int id)
+		{
+			var post = _blogPostService.GetById(id);
+
+			if (post is null)
+			{
+				return HttpNotFound();
+			}
+
+			return View("EditPost", post);
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult EditPost(BlogPost post)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(post);
+			}
+
+			TempData["SuccessMessage"] = "Blog post updated successfully.";
+
+			_blogPostService.Update(post);
+			return RedirectToAction("Details", new {id = post.Id});
 		}
 	}
 }
