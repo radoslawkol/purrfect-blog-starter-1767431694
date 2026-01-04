@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202601031549569_InitialCreate.Designer.cs">
       <DependentUpon>202601031549569_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202601040953291_AddBlogPostValidation.cs" />
+    <Compile Include="Migrations\202601040953291_AddBlogPostValidation.Designer.cs">
+      <DependentUpon>202601040953291_AddBlogPostValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BlogPost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -223,6 +227,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202601031549569_InitialCreate.resx">
       <DependentUpon>202601031549569_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202601040953291_AddBlogPostValidation.resx">
+      <DependentUpon>202601040953291_AddBlogPostValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

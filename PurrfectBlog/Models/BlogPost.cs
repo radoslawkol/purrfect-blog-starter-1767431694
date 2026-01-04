@@ -7,15 +7,15 @@ namespace PurrfectBlog.Models
 	{
 		public int Id { get; set; }
 
-		[Required]
+		[Required(ErrorMessage = "Title is required.")]
 		[StringLength(200)]
 		public string Title { get; set; }
 
-		[Required]
-		public string Description { get; set; }
+		[Required(ErrorMessage = "Content is required.")]
+		public string Content { get; set; }
 
-		[Required]
-		public string Author { get; set; }
+		[StringLength(100)]
+		public string Category { get; set; }
 
 		public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 	}
