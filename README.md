@@ -1,59 +1,62 @@
-# GenericTemplate
+# Purrfect Blog
+Purrfect Blog is a simple blog application built with ASP.NET MVC using .NET Framework 4.7, Entity Framework, and SQL Server.
+The application allows users to create, view, edit, and delete blog posts, demonstrating full CRUD functionality.
 
-**[Insert a brief description of your application here. Describe its purpose, functionality, etc.]**
+It features are: home page with the most recent posts, a posts list page, individual post details, form validation, and user-friendly error handling.
+The main purpose of this project is to practice the MVC architecture and CRUD operations.
 
 ## 🌐 Demo
-
-[Your Demo Link Here](http://replace-with-your-link.com)
-
-**Demo Credentials (If applicable):**
-- **Username:** ReplaceThisWithUsername
-- **Password:** ReplaceThisWithPassword
+https://github.com/user-attachments/assets/228e9a77-b1b3-4a58-888b-a2d96c3685da
 
 ## 📖 About this Software
 
-Provide a comprehensive explanation of your software here. Dive into its core functionalities, why you opted to create it, its target users, and its value proposition.
+Purrfect Blog is an application built with ASP.NET MVC using .NET Framework 4.7.2.
+The project uses Entity Framework (Code First) together with SQL Server for data persistence and database management. 
+Entity Framework migrations are used to manage database schema changes and ensure the database stays in sync with the application models.
+Business logic is separated from controllers through a service layer, improving maintainability.
+
+Autofac is used as the dependency injection container, allowing services to be injected into controllers. This decouples application components and makes the system easier to test and extend.
+The application implements full CRUD (Create, Read, Update, Delete) functionality for blog posts, along with server-side validation, routing, and user-friendly error handling. 
+The UI is styled using Bootstrap to provide a clean and responsive layout.
 
 ### Features:
 
-1. **Feature 1:** Brief description.
-2. **Feature 2:** Brief description.
-3. **...:** Continue listing out the core features of your application.
+#### 1. Create Blog Posts
+Users can create new blog posts using a validated form that ensures required fields such as title and content are provided.
+
+#### 2. View Blog Posts
+Blog posts are displayed in a list view and can be opened individually to read full content, including creation date and category.
+
+#### 3. Edit Existing Posts
+Posts can be edited through a pre-populated form, allowing users to update titles, content, and categories with validation.
+
+#### 4. Delete Posts with Confirmation
+Posts can be safely deleted using a confirmation modal to prevent accidental removal.
+
+#### 5. Home Page with Recent Posts
+The home page displays the three most recent blog posts, ordered by creation date, with preview excerpts and “Read More” links.
+
+#### 6. Form Validation and User Feedback
+The application provides clear validation errors, success messages, and user-friendly error pages such as a custom 404 view.
 
 ## 🖼️ Screenshots
 
 To give you a visual overview of the application, here are some screenshots:
 
-### [Feature or Page Name]
-![Description of Image](http://link-to-your-image.com/image1.png)
+### Posts list
+<img width="1917" height="1029" alt="image" src="https://github.com/user-attachments/assets/2835ad30-1ca9-46b9-ad84-4a5c8c26fcfb" />
 
-### [Another Feature or Page Name]
-![Description of Image](http://link-to-your-image.com/image2.png)
+### Create Post form
+<img width="1915" height="1037" alt="image" src="https://github.com/user-attachments/assets/c4403146-8a9d-4ae1-b9b3-cd046360e08a" />
 
-Add more screenshots as needed. Ensure to replace placeholders with appropriate links and descriptions.
+### Edit Post form
+<img width="1920" height="1039" alt="image" src="https://github.com/user-attachments/assets/59e350e3-9bd1-4530-9c85-1b2f2c2ecc0b" />
 
-## ⚠️ Warning
+### Delete confirmation modal
+<img width="1919" height="1034" alt="image" src="https://github.com/user-attachments/assets/06645a7f-7b7e-4816-bb34-01c05ca47e8f" />
 
-**Changing the repository name is NOT allowed.** Renaming this repository can cause issues with the peer review feature integrated into this template. 
+### 404 Not Found page
+<img width="1914" height="1034" alt="image" src="https://github.com/user-attachments/assets/449df192-9080-4e4d-a3e8-4f3a830c5c44" />
 
-If you're planning to present this project to potential employers or external parties:
-
-1. Ensure that all functionalities work as expected.
-2. **Remove this warning section** to maintain a clean and professional look.
-
-## ✅ Best Practices to Follow
-
-To ensure high-quality projects, we recommend adhering to the following best practices:
-
-1. **Gitflow:** Always use pull requests (PRs) for introducing new features or changes. This helps in maintaining a clean commit history and enables peer reviews.
-2. **Commit Formatting:** Follow a commit convention such as Git convention or [Conventional Commits](https://www.conventionalcommits.org/). It makes the commit history readable and easy to understand.
-3. **Test Coverage:** Aim for a minimum test coverage of 80-90%. This ensures that the majority of your code is tested, reducing potential bugs and regressions.
-4. **Comprehensive README:** A well-documented README provides clarity about the project's purpose, usage, and maintenance.
-5. **Live Demo:** Always provide a live demo with login credentials (if applicable). It offers a hands-on experience of your application to users or potential employers.
-6. **Continuous Integration (CI):** Implement CI to automatically build and test your project. This ensures that your code is always in a deployable state.
-7. **Continuous Deployment (CD):** While CI is a must, having CD is a nice-to-have feature. It automates the deployment process, ensuring that the latest changes are instantly accessible to users.
-8. **Clean Code:** Avoid clutter or "junk" in your code. Ensure that your codebase is organized, commented when necessary, and follows established coding standards.
-
----
-
-Happy coding! 💻
+### 500 Server Error page
+<img width="1920" height="1037" alt="image" src="https://github.com/user-attachments/assets/e31bd07c-ead2-4588-b365-76c56ff40eca" />
